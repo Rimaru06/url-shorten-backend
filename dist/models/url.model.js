@@ -1,5 +1,7 @@
-import { model, Schema } from "mongoose";
-const UrlSchema = new Schema({
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const mongoose_1 = require("mongoose");
+const UrlSchema = new mongoose_1.Schema({
     shortId: { type: String, required: true, unique: true },
     originalUrl: { type: String, required: true },
     shortUrl: { type: String, required: true },
@@ -13,5 +15,5 @@ const UrlSchema = new Schema({
         }
     ]
 });
-const UrlModel = model("Url", UrlSchema);
-export default UrlModel;
+const UrlModel = (0, mongoose_1.model)("Url", UrlSchema);
+exports.default = UrlModel;
